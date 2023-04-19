@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class compras extends Model
+{
+    use HasFactory;
+    public $table='compras';
+    public $timestamps=true;
+    protected $fillable =[
+        'id_compras', 'nombre_co'
+    ];
+
+    protected $primaryKey = 'id_compras';
+}
