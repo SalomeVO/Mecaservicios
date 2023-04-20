@@ -9,9 +9,9 @@ class cliente extends Model
 {
     use HasFactory;
     public $table='cliente';
-    public $timestamps=true;
+    public $timestamps=false;
     protected $fillable =[
-        'nit', 'cnombre','capellido','ctelefono','cemail','cdireccion','num_servicios'
+        'nit', 'cnombre','capellido','ctelefono','cemail','cdireccion','num_servicio'
     ];
 
     protected $primaryKey = 'nit';

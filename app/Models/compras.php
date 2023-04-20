@@ -9,7 +9,7 @@ class compras extends Model
 {
     use HasFactory;
     public $table='compras';
-    public $timestamps=true;
+    public $timestamps=false;
     protected $fillable =[
         'id_compras', 'nombre_co'
     ];

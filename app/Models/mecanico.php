@@ -9,7 +9,7 @@ class mecanico extends Model
 {
     use HasFactory;
     public $table='mecanico';
-    public $timestamps=true;
+    public $timestamps=false;
     protected $fillable =[
         'id_mec', 'mnombre','disponibilidad'
     ];

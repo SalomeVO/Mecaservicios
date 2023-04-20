@@ -9,7 +9,7 @@ class servicio extends Model
 {
     use HasFactory;
     public $table='servicio';
-    public $timestamps=true;
+    public $timestamps=false;
     protected $fillable =[
         'id_servicio', 'snombre','scosto'
     ];

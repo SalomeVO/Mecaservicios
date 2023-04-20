@@ -9,7 +9,7 @@ class recibo extends Model
 {
     use HasFactory;
     public $table='recibo';
-    public $timestamps=true;
+    public $timestamps=false;
     protected $fillable =[
         'id_recibo', 'serv_mec_id','observacion','descuento','costo_total'
     ];

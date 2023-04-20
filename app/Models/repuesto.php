@@ -9,7 +9,7 @@ class repuesto extends Model
 {
     use HasFactory;
     public $table='repuesto';
-    public $timestamps=true;
+    public $timestamps=false;
     protected $fillable =[
         'id_repuesto', 'rnombre','rcantidad','rprecio','stock_min'
     ];

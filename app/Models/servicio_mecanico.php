@@ -9,7 +9,7 @@ class servicio_mecanico extends Model
 {
     use HasFactory;
     public $table='servicio_mecanico';
-    public $timestamps=true;
+    public $timestamps=false;
     protected $fillable =[
         'id_serv_mec', 'servicio_id','repuesto_id','mecanico_id','cliente_nit','vehiculo_placa','fecha','estado'
     ];

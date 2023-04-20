@@ -9,7 +9,7 @@ class trabajador extends Model
 {
     use HasFactory;
     public $table='trabajador';
-    public $timestamps=true;
+    public $timestamps=false;
     protected $fillable =[
         'tnum', 'contrasenia','tnombre','tapellido','rol_id'
     ];

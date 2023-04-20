@@ -9,7 +9,7 @@ class notificaciones extends Model
 {
     use HasFactory;
     public $table='notificaciones';
-    public $timestamps=true;
+    public $timestamps=false;
     protected $fillable =[
         'id_noti', 'nombre_n','correo_n','descripcion_n'
     ];

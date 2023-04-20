@@ -9,7 +9,7 @@ class vehiculo extends Model
 {
     use HasFactory;
     public $table='vehiculo';
-    public $timestamps=true;
+    public $timestamps=false;
     protected $fillable =[
         'placa', 'marca','linea','modelo','nit_cliente'
     ];
