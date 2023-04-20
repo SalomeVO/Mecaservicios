@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ComprasController;
+use App\Http\Controllers\MecanicoController;
 use App\Http\Controllers\NotificacionesController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,12 +40,10 @@ Route::get('/readnotificacion',  [NotificacionesController::class, 'index'])->na
 Route::delete('delatenotificacion/{id_noti}', [NotificacionesController::class,'deleteNoti'])->name('deleteNoti')->middleware('auth'); //Eliminar una Notificacion
 
 /* Routes de Mecanico */
-
-
-
-
-
-
+Route::get('/readmecanico',  [MecanicoController::class, 'index'])->name('index')->middleware('auth');;//Lista de Mecanico
+Route::get('/mecanicoedit/{id_mec}',  [MecanicoController::class, 'editMecanico'])->name('editMecanico')->middleware('auth'); //Formulario de Mecanico
+Route::patch('/actualizarM/{id_mec}',[MecanicoController::class, 'updateMecanico'])->name('updateMecanico')->middleware('auth');//Guardar la edicion
+Route::delete('delatemecanio/{id_mec}', [MecanicoController::class,'deleteMecanico'])->name('deleteMecanico')->middleware('auth'); //Eliminar un Mecanico
 
 /* Routes de Recibo */
 
