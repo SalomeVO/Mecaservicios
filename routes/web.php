@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ComprasController;
+use App\Http\Controllers\NotificacionesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,15 +34,11 @@ Route::delete('delatecliente/{nit}', [ClienteController::class,'deleteCliente'])
 /* Routes de Compras */
 Route::get('/readcompras',  [ComprasController::class, 'index'])->name('index')->middleware('auth');;//Lista de Compras
 
-/* Routes de Mecanico */
-
-
-
-
-
-
-
 /* Routes de Notificaciones */
+Route::get('/readnotificacion',  [NotificacionesController::class, 'index'])->name('index')->middleware('auth');;//Lista de notificaciones
+Route::delete('delatenotificacion/{id_noti}', [NotificacionesController::class,'deleteNoti'])->name('deleteNoti')->middleware('auth'); //Eliminar una Notificacion
+
+/* Routes de Mecanico */
 
 
 

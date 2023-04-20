@@ -10,32 +10,13 @@ class NotificacionesController extends Controller
 
     public function index()
     {
-        //
+        $notificacion = notificaciones::paginate(10);//el numero de filas
+        return view('notificaciones.vistaNoti', compact('notificacion'));
     }
 
-
-    public function create()
+    public function deleteNoti($id_noti)
     {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function edit(notificaciones $notificaciones)
-    {
-        //
-    }
-
-    public function update(Request $request, notificaciones $notificaciones)
-    {
-        //
-    }
-
-    public function destroy(notificaciones $notificaciones)
-    {
-        //
+        notificaciones::destroy($id_noti);
+        return redirect('/readnotificacion')->with('Eliminado', "Notificacion Enviada");
     }
 }
