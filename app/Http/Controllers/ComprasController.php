@@ -10,36 +10,8 @@ class ComprasController extends Controller
 
     public function index()
     {
-        //
+        $compras = compras::paginate(10);//el numero de filas
+        return view('compras.vistaCompras', compact('compras'));
     }
 
-
-    public function create()
-    {
-        //
-    }
-
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-
-    public function edit(compras $compras)
-    {
-        //
-    }
-
-
-    public function update(Request $request, compras $compras)
-    {
-        //
-    }
-
-
-    public function destroy(compras $compras)
-    {
-        //
-    }
 }
