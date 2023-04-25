@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ComprasController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MecanicoController;
 use App\Http\Controllers\NotificacionesController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +25,12 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 /* Routes de Cliente */
 Route::get('/formCliente', [ClienteController::class, 'createCliente'])->name('createCliente')->middleware('auth');//Formulario de Registro
@@ -40,7 +48,7 @@ Route::get('/readnotificacion',  [NotificacionesController::class, 'index'])->na
 Route::delete('delatenotificacion/{id_noti}', [NotificacionesController::class,'deleteNoti'])->name('deleteNoti')->middleware('auth'); //Eliminar una Notificacion
 
 /* Routes de Mecanico */
-Route::get('/readmecanico',  [MecanicoController::class, 'index'])->name('index')->middleware('auth');;//Lista de Mecanico
+Route::get('/readmecanico',  [MecanicoController::class, 'index'])->name('index')->middleware('auth');//Lista de Mecanico
 Route::get('/mecanicoedit/{id_mec}',  [MecanicoController::class, 'editMecanico'])->name('editMecanico')->middleware('auth'); //Formulario de Mecanico
 Route::patch('/actualizarM/{id_mec}',[MecanicoController::class, 'updateMecanico'])->name('updateMecanico')->middleware('auth');//Guardar la edicion
 Route::delete('delatemecanio/{id_mec}', [MecanicoController::class,'deleteMecanico'])->name('deleteMecanico')->middleware('auth'); //Eliminar un Mecanico
