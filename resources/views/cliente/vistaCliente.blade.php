@@ -5,7 +5,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 ml-5">
-                <h1 class="text-center mt-5" style="color: #005555"><i style="color:#005555"></i> CLIENTES </h1><br>
+                <h1 class="text-center mt-5" >
+                    <img src="https://i.ibb.co/TkM3xF4/Diagrama-en-blanco-2.png" width="100" height="100">
+                    </a>CLIENTES </h1>
+                <br>
 
                 <!--Mensaje de Eliminado-->
                 @if(session('Eliminado'))
@@ -29,27 +32,27 @@
                 @endif
 
                 <!--boton de agregar clientes-->
-                <a class="btn btn-info mb-4 my-lg-0 col-md-3" href="{{route('createCliente')}}">
-                    <i style="color: white"> AGREGAR</i>
+                <a class="btn btn-success" href="{{route('createCliente')}}" style="background-color: #3DA025;border-radius: 50%">
+                    <i style="color: white"> <i class="fas fa-plus"></i></i>
                 </a>
                 <br>
 
                 <br>
                 <table class="table table-light table-bordered table-hover text-center">
-                    <thead style="color: #069a8e">
+                    <thead style="color: #8B716C; border-color: #8B716C">
                     <tr>
-                        <th>NIT</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Telefono</th>
-                        <th>Email</th>
-                        <th>Direccion</th>
-                        <th>No. Serevicio</th>
-                        <th>Acciones</th>
+                        <th style="background-color: #a4c2f4">NIT</th>
+                        <th style="background-color: #a4c2f4">Nombre</th>
+                        <th style="background-color: #a4c2f4">Apellido</th>
+                        <th style="background-color: #a4c2f4">Telefono</th>
+                        <th style="background-color: #a4c2f4">Email</th>
+                        <th style="background-color: #a4c2f4">Direccion</th>
+                        <th style="background-color: #a4c2f4">No. Serevicio</th>
+                        <th style="background-color: #a4c2f4">Acciones</th>
                     </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody style="border-color: #8B716C">
                     @foreach($cliente as $clientes)
                         <tr>
                             <td>{{$clientes->nit}}</td>
@@ -63,7 +66,7 @@
                                 <div class="btn btn-group">
 
                                     <a href="{{route('editCliente', $clientes->nit)}}" class="btn btn-outline-info mb-2 me-2 m-1">
-                                        <i class="fas fa-edit"></i>
+                                        <i class="fas fa-pencil-alt"></i>
                                     </a>
 
                                     <form action="{{route('deleteCliente',$clientes->nit)}}" method="POST">
